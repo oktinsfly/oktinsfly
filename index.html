@@ -3,146 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oktinsfly — Корпоративные стандарты путешествий</title>
+    <title>Oktinsfly — Корпоративный стиль путешествий</title>
     <style>
         :root {
-            --brand-blue: #003580;
-            --brand-orange: #f57c00;
-            --bg-gray: #f4f6f8;
-            --text-dark: #1a1a1a;
+            --brand-blue: #003580; /* Глубокий синий из вашего логотипа */
+            --brand-orange: #f57c00; /* Акцентный оранжевый */
+            --white: #ffffff;
+            --gray: #f4f6f8;
         }
 
         body {
-            font-family: 'Inter', -apple-system, sans-serif;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
-            background-color: var(--bg-gray);
-            color: var(--text-dark);
+            background-color: var(--gray);
         }
 
-        /* Шапка в корпоративном стиле */
+        /* Шапка сайта */
         header {
-            background: var(--brand-blue);
-            padding: 15px 10%;
+            background: white;
+            padding: 10px 10%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            color: white;
+            border-bottom: 2px solid var(--brand-blue);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        .logo {
-            font-size: 24px;
-            font-weight: 800;
-            letter-spacing: -1px;
-        }
-
-        .logo span { color: var(--brand-orange); }
-
-        nav a {
-            color: white;
+        .logo-container {
+            display: flex;
+            align-items: center;
             text-decoration: none;
-            margin-left: 25px;
-            font-size: 14px;
+        }
+
+        .logo-img {
+            height: 60px; /* Размер под ваш круглый логотип */
+            width: auto;
+            margin-right: 15px;
+        }
+
+        .brand-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--brand-blue);
             text-transform: uppercase;
         }
 
-        /* Главный блок */
+        nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: var(--brand-blue);
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* Главный баннер */
         .hero {
-            background: linear-gradient(rgba(0,53,128,0.8), rgba(0,53,128,0.8)), 
+            background: linear-gradient(rgba(0,53,128,0.7), rgba(0,53,128,0.7)), 
                         url('https://images.unsplash.com/photo-1436491865332-7a61a109c0f3?auto=format&fit=crop&w=1600');
             background-size: cover;
-            height: 450px;
+            height: 400px;
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             color: white;
-            text-align: center;
         }
 
-        .search-box {
+        .search-form {
             background: white;
-            padding: 10px;
-            border-radius: 4px;
+            padding: 20px;
+            border-radius: 8px;
             display: flex;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            width: 80%;
-            max-width: 900px;
+            gap: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            margin-top: 20px;
         }
 
-        .search-box input {
-            flex: 1;
-            padding: 15px;
-            border: 1px solid #ddd;
-            margin-right: 10px;
+        .search-form input {
+            padding: 12px;
+            border: 1px solid #ccc;
             border-radius: 4px;
+            min-width: 200px;
         }
 
-        .btn-search {
+        .btn-main {
             background: var(--brand-orange);
             color: white;
             border: none;
-            padding: 15px 40px;
+            padding: 12px 30px;
             border-radius: 4px;
-            cursor: pointer;
             font-weight: bold;
-        }
-
-        /* Сетка направлений */
-        .content { padding: 50px 10%; }
-        
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .card {
-            background: white;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            overflow: hidden;
+            cursor: pointer;
             transition: 0.3s;
         }
 
-        .card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .card img { width: 100%; height: 200px; object-fit: cover; }
-        .card-body { padding: 20px; }
-        .price { color: var(--brand-blue); font-weight: bold; font-size: 1.2rem; }
+        .btn-main:hover {
+            background: #e65100;
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="logo">OKTINS<span>FLY</span></div>
+    <a href="#" class="logo-container">
+        <img src="logo.png" alt="Oktinsfly Logo" class="logo-img">
+        <div class="brand-name">Oktinsfly</div>
+    </a>
     <nav>
-        <a href="#">Направления</a>
-        <a href="#">Бизнес-тарифы</a>
-        <a href="#">Поддержка</a>
+        <a href="#">Авиабилеты</a>
+        <a href="#">Отели</a>
+        <a href="#">О компании</a>
+        <a href="#" style="color: var(--brand-orange);">Личный кабинет</a>
     </nav>
 </header>
 
 <section class="hero">
-    <h1>Профессиональные решения для ваших поездок</h1>
-    <p>Надежность. Скорость. Комфорт.</p>
-    <div class="search-box">
-        <input type="text" placeholder="Город вылета">
+    <h1>Путешествуйте по стандартам Oktinsfly</h1>
+    <div class="search-form">
+        <input type="text" placeholder="Город отправления">
         <input type="text" placeholder="Куда летим?">
-        <button class="btn-search">Найти рейсы</button>
+        <button class="btn-main">Найти варианты</button>
     </div>
 </section>
-
-<div class="content">
-    <h2>Популярные направления</h2>
-    <div class="grid">
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=500" alt="Лондон">
-            <div class="card-body">
-                <h3>Лондон, Великобритания</h3>
-                <p class="price">от 45 000 ₽</p>
-            </div>
-        </div>
-        </div>
-</div>
 
 </body>
 </html>
